@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: index
+  datasource:
+    #    type: com.alibaba.druid.pool.DruidDataSource
+    #MySQL??
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/performante?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: password

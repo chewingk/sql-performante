@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chewingk.sql.index.infrastructure.mapper.EmployeeMapper">
+    <insert id="batchInsert" parameterType="list">
+        INSERT INTO employees
+        (first_name, last_name, phone_number, id_number,
+        gender, email, date_of_birth, address,
+        zip_code, salary, department, join_date, status)
+        VALUES
+        <foreach collection="list" item="employee" separator=",">
+            (#{employee.firstName},
+            #{employee.lastName},
+            #{employee.phoneNumber},
+            #{employee.idNumber},
+            #{employee.gender},
+            #{employee.email},
+            #{employee.dateOfBirth},
+            #{employee.address},
+            #{employee.zipCode},
+            #{employee.salary},
+            #{employee.department},
+            #{employee.joinDate},
+            #{employee.status})
+        </foreach>
+    </insert>
+</mapper>
